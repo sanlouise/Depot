@@ -1,13 +1,7 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+mountain_drone:
+  title: Mountain Drone
+  description:
+    This is the world's highest flying drone.
+  image_url: drony.jpg
+  price: 827.78
 
-one:
-  title: MyString
-  description: MyText
-  image_url: MyString
-  price: 9.99
-
-two:
-  title: MyString
-  description: MyText
-  image_url: MyString
-  price: 9.99

@@ -3,7 +3,7 @@ require 'test_helper'
 
 class ProductsControllerTest < ActionController::TestCase
   setup do
-    @product = products(:one)
+    @product = products(:mountain_drone)
     @update = {
       title: 'Intro Drone',
       description: 'Drone of the future.',
