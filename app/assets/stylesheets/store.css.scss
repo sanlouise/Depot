@@ -3,11 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 img {
-      width: 120px;
-      margin-right: 5px;
-      margin-bottom: 5px;
-      position: absolute;
+      width: 240px;
+      height: 160px;
+
     }
+    
+.col.well {
+  height: 100px !important;
+}
 
 // .store {
 //   h1 {
