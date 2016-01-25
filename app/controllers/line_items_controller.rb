@@ -27,12 +27,11 @@ class LineItemsController < ApplicationController
   # POST /line_items.json
   def create
     product = Product.find(params[:product_id])
-    @line_item = @cart.add_product(product: product)
-
+    @line_item = @cart.add_product(product.id)
     respond_to do |format|
       if @line_item.save
         
-        format.html { redirect_to @line_item.cart, notice: 'Item was added to your cart successfully!' }
+        format.html { redirect_to @line_item.cart, notice: 'Item was successfully added.' }
         format.json { render :show, status: :created, location: @line_item }
       else
         format.html { render :new }
@@ -46,7 +45,7 @@ class LineItemsController < ApplicationController
   def update
     respond_to do |format|
       if @line_item.update(line_item_params)
-        format.html { redirect_to @line_item, notice: 'Line item was successfully updated.' }
+        format.html { redirect_to @line_item, notice: 'Item was successfully updated.' }
         format.json { render :show, status: :ok, location: @line_item }
       else
         format.html { render :edit }
