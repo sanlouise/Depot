@@ -3,25 +3,27 @@
 <% end %>
 
 <h1> </h1>
-
-<% @products.each do |product| %>
-  <div class="entry">
-    <div class="row">
-
-      <div class="col-md-4 text-center">
-        <%= image_tag(product.image_url) %>
-      </div>
-      <div class="col-lg-6 well"> 
-        <h3><%= product.title %></h3>
-        <%= sanitize(product.description) %>
-      </div>
-      <div class="price_line">
-        <div class="col-md-2">
-          <span class="price"><%= product.price %> </span>
+<% cache ['store', Product.latest] do %>
+  <% @products.each do |product| %>
+    <% cache ['entry', product] do %>
+      <div class="entry">
+        <div class="row">
+    
+          <div class="col-md-4 text-center">
+            <%= image_tag(product.image_url) %>
+          </div>
+          <div class="col-lg-6 well"> 
+            <h3><%= product.title %></h3>
+            <%= sanitize(product.description) %>
+          </div>
+          <div class="price_line">
+            <div class="col-md-2">
+              <span class="price"><%= number_to_currency(product.price) %> </span>
+            </div>
+          </div>
+            
         </div>
       </div>
-        
-    </div>
-  </div>
-
+    <% end %>
+  <% end %>
 <% end %>
