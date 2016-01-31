@@ -1,32 +1,31 @@
-<h1> Store </h1>
-<% cache ['store', Product.last] do %>
-  <% @products.each do |product| %>
-    <% cache ['entry', product] do %>
-      <div class="entry">
-        <div class="row">
-    
-          <div class="col-md-3 text-center">
-            <%= image_tag(product.image_url) %>
-          </div>
-          <div class="col-lg-5 well"> 
-            <h3><%= product.title %></h3>
-            <%= sanitize(product.description) %>
-          </div>
-          <div class="price_line">
-            <div class="col-md-1">
-              <span class="price"><%= number_to_currency(product.price) %> </span>
-              <%= button_to "Add to Cart", line_items_path(product_id: product), class: "btn btn-default btn-xs" %>
+<h1 class="text-center"> Store </h1>
+<div class="entry">
+  <div class="row">
+    <div class="col-md-9">
+      <% cache ['store', Product.last] do %>
+        <% @products.each do |product| %>
+          <% cache ['entry', product] do %>
+          
+            <div class="col-md-4 text-center">
+              <%= image_tag(product.image_url) %>
             </div>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
-
-<% end %>
-
-<div class="row">
-  <div class="col-lg-3 well"> 
-    <%= render @cart %>
+            
+            <div class="col-lg-7 well"> 
+              <h3><%= product.title %></h3>
+              <%= sanitize(product.description) %>
+            </div>
+            
+            <div class="col-md-1 price_line">
+              <span class="price"><%= number_to_currency(product.price) %> </span>
+              <%= button_to "Add to Cart", line_items_path(product_id: product), remote: true %>
+            </div>
+            
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="col-md-2 offset-1 text-center", id="cart">
+      <%= render @cart %>
+    </div>
   </div>
 </div>

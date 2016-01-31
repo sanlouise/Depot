@@ -1,0 +1,18 @@
+.text-center.cart {
+  padding-bottom: 10px;
+}
+
+.carts .item-price, .carts .total-line {
+    text-align: right !important;
+    padding-left: 8px;
+}
+
+.carts .total-line .total-cell {
+    font-weight: bold;
+    border-top: 1px solid black;
+
+}
+
+td {
+      padding-top: 8px;
+}
