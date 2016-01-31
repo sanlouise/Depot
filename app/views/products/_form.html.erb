@@ -1,7 +1,10 @@
 <%= form_for(@product) do |f| %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
   <% if @product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+        <div id="error_explanation text-center">
+          <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
 
       <ul>
       <% @product.errors.full_messages.each do |message| %>
@@ -10,6 +13,8 @@
       </ul>
     </div>
   <% end %>
+      </div>
+  </div>  
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
