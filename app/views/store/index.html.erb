@@ -25,7 +25,9 @@
       <% end %>
     </div>
     <div class="col-md-2 offset-1 text-center", id="cart">
-      <%= render @cart %>
+      <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+        <%= render @cart %>
+      <% end %>
     </div>
   </div>
 </div>
