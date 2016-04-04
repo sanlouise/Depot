@@ -1,0 +1,71 @@
+// Centering Text 
+@media (min-width: 768px) {
+    .navbar .navbar-nav {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+    }
+
+    .navbar .navbar-collapse {
+        text-align: center;
+    }
+}
+
+// End Centering Text
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: white;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: #4B77BE;
+  text-decoration:none;
+}
+
+ul.nav.navbar-nav a {
+  color: #fff;
+  font-size: 17px;
+}
+
+
+.ul.nav.navbar-nav.li.a:hover{ 
+  color: white !important;
+  font-size: 17px;
+}
+
+ul.nav.navbar-nav.li.a:focus {
+  color: #fff !important;
+  font-size: 17px;
+}
+
+ul.dropdown-menu {
+  background-color: #C3272B !important;
+}
+
+ul.dropdown-menu li :hover {
+  background-color: #8F1D21 !important;
+}
+
+ul.dropdown-menu li a{
+  color:white !important;
+}
+
+
+// Profile Dropdown
+.dropdown-toggle {
+  color:white !important;
+}
+
+.dropdown-toggle:hover {
+  color:white !important;
+}
+
+.dropdown-toggle:clicked {
+  color:white !important;
+}
+
+// End Profile Dropdown
